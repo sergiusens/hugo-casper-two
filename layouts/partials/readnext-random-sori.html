@@ -12,7 +12,7 @@
     <div class="read-next-card-content">
       {{ $shuffledposts := ($posts | shuffle) }}{{$.Scratch.Set "pc" 0}}
         <ul>{{range $shuffledposts}}{{if (lt ($.Scratch.Get "pc") 4)}}
-          {{if (ne .Permalink $currentPage.Permalink)}}<li><a href="{{.Permalink}}">{{.Title}}</a></li>{{$.Scratch.Add "pc" 1}}{{end}}            
+          {{if (ne .RelPermalink $currentPage.RelPermalink)}}<li><a href="{{.RelPermalink}}">{{.Title}}</a></li>{{$.Scratch.Add "pc" 1}}{{end}}            
         {{end}}{{end}}</ul>
     </div>
     <footer class="read-next-card-footer">
