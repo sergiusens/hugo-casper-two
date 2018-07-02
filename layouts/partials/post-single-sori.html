@@ -7,7 +7,7 @@
         <h1 class="post-full-title">{{.Title}}</h1>
     </header>
     {{if .Params.image}}
-    <figure class="post-full-image" style="background-image: url({{.Params.image | absURL}})">
+    <figure class="post-full-image" style="background-image: url({{.Params.image}})">
     </figure>{{else}}
     <figure class="post-full-image" style="background-image: url({{$.Site.BaseURL}}defimg/{{ index (seq 7 | shuffle) 0 }}.jpg)">
     </figure>{{end}}
@@ -22,7 +22,7 @@
       <section class="author-card">
         <img class="author-profile-image" src="{{ (.Params.authorAvatar | default .Site.Params.authorAvatar) | absURL}}" alt="Author" />
         <section class="author-card-content">
-            <h4 class="author-card-name"><a href="{{"/" | absURL}}">{{.Params.author | default .Site.Params.author}}</a></h4>
+            <h4 class="author-card-name"><a href="{{"/"}}">{{.Params.author | default .Site.Params.author}}</a></h4>
                 <p>{{.Params.authorDescription | default .Site.Params.authorDescription}}</p>
         </section>
       </section>
