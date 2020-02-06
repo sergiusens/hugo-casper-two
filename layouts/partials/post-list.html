@@ -1,7 +1,7 @@
-{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "posts") }}
+{{ $paginator := .Paginate .Site.RegularPages }}
 {{ range $paginator.Pages }}
 
-<article class="post-card post"> 
+<article class="post-card post">
     {{if .Params.image}}
     <a class="post-card-image-link" href="{{ .RelPermalink }}">
       <div class="post-card-image" style="background-image: url({{.Params.image}})"></div>
@@ -9,7 +9,7 @@
     {{else}}
     <a class="post-card-image-link" href="{{ .RelPermalink }}">
       <div class="post-card-image" style="background-image: url(/defimg/{{ index (seq 7 | shuffle) 0 }}.jpg)"></div>
-    </a>    
+    </a>
     {{end}}
 
     <div class="post-card-content">
